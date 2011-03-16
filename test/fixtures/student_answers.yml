@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  student: MyString
+  qid: 1
+  answer: MyString
+
+two:
+  student: MyString
+  qid: 1
+  answer: MyString
