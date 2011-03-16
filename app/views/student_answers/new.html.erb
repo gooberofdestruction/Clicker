@@ -1,0 +1,16 @@
+<h1>New student_answer</h1>
+
+    <% @question.each do |question|%>
+    <p>ID: <%= question.id %> <%= question.question %></p>
+    <% end %>
+    <p>
+        <ol type="a">
+          <% @answers.each do |answer|%>
+            <li><%= answer.answer %></li>
+          <% end %>
+      </ol>
+  </p>
+            
+<%= render 'form' %>
+
+<%= link_to "Take Quiz", :controller => "student", :action => "take_quiz", :quiz => @quizId %>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <h1><%= @quizzes.title %></h1>
+        </head>
+        <body>
+            <% @questions.each do |question| %>
+                <p><%= question.question %></p>
+                <p>
+                    <ol type="a">
+                    <% @answers[question.id].each do |answer|%>
+                        <li><%= answer.answer %></li>
+                    <% end %>
+                    </ol>
+                </p>
+            <% end %>
+            <p><%= link_to 'back', :controller => "student", :action => "index" %></p>
+        </body>
+    </html
+    

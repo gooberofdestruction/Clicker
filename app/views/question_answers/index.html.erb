@@ -1,0 +1,27 @@
+<h1>Listing question_answers</h1>
+
+<table>
+  <tr>
+    <th>Qid</th>
+    <th>Answer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @question_answers.each do |question_answer| %>
+  <tr>
+    <td><%= question_answer.qid %></td>
+    <td><%= question_answer.answer %></td>
+    <td><%= link_to 'Show', question_answer %></td>
+    <td><%= link_to 'Edit', edit_question_answer_path(question_answer) %></td>
+    <td><%= link_to 'Destroy', question_answer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Question answer', new_question_answer_path %>
+<br />
+<%= link_to 'back', :controller => "quizzes", :action => "index" %>

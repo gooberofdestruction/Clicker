@@ -1,0 +1,32 @@
+<h1>Listing quizzes</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @quizzes.each do |quiz| %>
+  <tr>
+    <td><%= quiz.id %></td>
+    <td><%= quiz.title %></td>
+    <td><%= link_to "View Quiz", :controller => "quizzes", :action => "view_quiz", :id => quiz.id %></td>
+    <td><%= link_to "View Scores", :controller => "quizzes", :action => "view_scores", :id => quiz.id %></td>
+    <td><%= link_to 'Edit Quiz', edit_quiz_path(quiz) %></td>
+    <td><%= link_to 'Remove Quiz', quiz, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quiz', new_quiz_path %>
+<br />
+<%= link_to "Add Questions", :controller => "questions", :action => "index" %>
+<br />
+<%= link_to "Add Answers", :controller => "question_answers", :action => "index" %>
+<br />
+<br />
+<%= link_to 'Home', :controller => "home", :action => "index" %>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <h1>Clicker</h1>
+        </head>
+        <body>
+                <% @questions.each do |question| %>
+                    <p><%= question.question %></p>
+                    <p>
+                        <%if @answers.count > 0%>
+                            <%= @answers[question.id]%>
+                        <% end %>
+                    </p>
+                <% end %>
+            <p><%= link_to 'back', :controller => "student", :action => "index" %></p>
+        </body>
+    </html
+    

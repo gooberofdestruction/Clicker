@@ -1,0 +1,2 @@
+class StudentanswersController < ApplicationController
+end

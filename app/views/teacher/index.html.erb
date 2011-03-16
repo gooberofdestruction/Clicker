@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <h1>Clicker</h1>
+        </head>
+        <body>
+            <p>Teacher</p>
+            <table>
+                <% @quizzes.each do |quiz| %>
+                <tr>
+                    <td><%= quiz.title %></td>
+                    <td><%= link_to "View Quiz", :controller => "teacher", :action => "view_quiz", :id => quiz.id %></td>
+                    <td><%= link_to "View Scores", :controller => "teacher", :action => "view_scores", :id => quiz.id %></td>
+                    <td><%= link_to 'Update Quiz', :controller => "quizzes", :action => "update", :id => quiz.id %></td>
+                    <td><%= link_to 'Remove Quiz', :controller => "quizzes", :action => "destroy", :id => quiz.id %></td>
+                </tr>
+                <% end %>
+            </table>
+            <p><%= link_to 'Add Quiz', :controller => "quizzes", :action => "new" %></p>
+            <p><%= link_to 'Home', :controller => "home", :action => "index" %></p>
+        </body>
+    </html
+    

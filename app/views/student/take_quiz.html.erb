@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <h1><%= @quizzes.title %></h1>
+        </head>
+        <body>
+            <% @questions.each do |question| %>
+                <p><%= link_to question.question, :controller => "student_answers", :action => "new", :question => question.id %></p>
+            <% end %>
+            <p><%= link_to 'back', :controller => "student", :action => "index" %></p>
+        </body>
+    </html
+    

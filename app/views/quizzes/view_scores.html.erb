@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <h1><%= @quizzes.title %></h1>
+        </head>
+        <body>
+            <% @questions.each do |question| %>
+                <p><%= question.question %></p>
+                <table>
+                    <tr>
+                        <td>Correct:</td><td><%= @correct[question.id] %></td>
+                    </tr>
+                    <tr>
+                        <td>Wrong:</td><td><%= @wrong[question.id] %></td>
+                    </tr>
+                    <tr>
+                        <td>Total:</td><td><%= @total[question.id] %></td>
+                    </tr>
+                </table>
+            <% end %>
+            <p><%= link_to 'back', :controller => "quizzes", :action => "index" %></p>
+        </body>
+    </html
+    

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <h1>Clicker</h1>
+        </head>
+        <body>
+            <p>Student</p>
+            <table>
+                <% @quizzes.each do |quiz| %>
+                <tr>
+                    <td><%= quiz.title %></td>
+                    <td><%= link_to "Take Quiz", :controller => "student", :action => "take_quiz", :quiz => quiz.id %></td>
+                    <td><%= link_to "View Score", :controller => "student", :action => "view_students", :quiz => quiz.id %></td>
+                </tr>
+                <% end %>
+            </table>
+            <p><%= link_to 'Home', :controller => "home", :action => "index" %></p>
+        </body>
+    </html
+    
