@@ -25,7 +25,8 @@ class StudentController < ApplicationController
   end
   
   def view_students
-    @students = StudentAnswers.all
+    @students = StudentAnswers.find_by_sql('Select * from Student_Answers group by student')
+  
     @quizId = params[:quiz]
     
   end
@@ -35,9 +36,10 @@ class StudentController < ApplicationController
     @answers = {}
     
     @questions.each do |question|
-      if StudentAnswers.where(:qid => question.id, :id => params[:student]).count > 0
-        @answers[question.id] = StudentAnswers.where(:qid => question.id, :id => params[:student]).count
-        if StudentAnswers.where(:qid => question.id, :id => params[:student]).first.answer == question.answer
+      if StudentAnswers.where(:qid => question.id, :student => params[:student]).count > 0
+        @answers[question.id] = StudentAnswers.where(:qid => question.id, :student => params[:student]).count
+        
+        if StudentAnswers.where(:qid => question.id, :student => params[:student]).first.answer == question.answer
           @answers[question.id] = "Correct"
         else
           @answers[question.id] = "Wrong"

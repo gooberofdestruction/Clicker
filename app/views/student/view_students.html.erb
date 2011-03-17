@@ -5,7 +5,7 @@
         </head>
         <body>
                 <% @students.each do |student| %>
-                    <p><%= link_to student.student, :controller => "student", :action => "view_score", :quiz => @quizId, :id => student.id %></p>
+                    <p><%= link_to student.student, :controller => "student", :action => "view_score", :quiz => @quizId, :student => student.student %></p>
                 <% end %>
                 <p></p>
                 <p><%= link_to 'back', :controller => "student", :action => "index" %></p>
